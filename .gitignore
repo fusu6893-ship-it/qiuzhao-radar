@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+._*
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*~
+
+# 依赖与日志（本项目无依赖，保留以防后续引入）
+node_modules/
+*.log
+
+# 本地临时文件
+.tmp/
+tmp/

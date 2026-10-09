@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>秋招雷达 · 产品经理作品集 | 从岗位发现到面试通关的 AI 求职产品设计</title>
+<meta name="description" content="面向应届毕业生的 AI 求职工作台：产品定位、用户画像、产品架构、关键页面交互演示、AI 能力实现与 AI Coding 实践复盘。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%233b6ef6'/><text y='68' x='50' font-size='54' text-anchor='middle' fill='white' font-family='sans-serif'>秋</text></svg>">
+<link rel="stylesheet" href="assets/css/portfolio.css">
+</head>
+<body>
+
+<!-- ============================ 顶部导航 ============================ -->
+<header class="pnav">
+  <div class="pnav-in">
+    <div class="pnav-brand"><div class="pnav-mark">秋</div>秋招雷达 · 作品集</div>
+    <nav class="pnav-links">
+      <a href="#opportunity">机会</a>
+      <a href="#users">用户</a>
+      <a href="#architecture">架构</a>
+      <a href="#screens">交互演示</a>
+      <a href="#ai">AI 实现</a>
+      <a href="#aicoding">AI Coding</a>
+      <a href="#metrics">指标</a>
+      <a href="#roadmap">路线图</a>
+      <a class="pnav-cta" href="index.html" target="_blank" rel="noopener">打开产品原型 →</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================ Hero ============================ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-tags">
+      <span class="pill pill-brand">产品经理项目作品集</span>
+      <span class="pill pill-accent">AI Coding 实践</span>
+      <span class="pill pill-ok">可交互原型已实现</span>
+      <span class="pill">2026 秋招</span>
+    </div>
+
+    <h1>把求职的每一步，<em>都变得更清晰。</em></h1>
+
+    <p class="hero-sub">
+      秋招雷达是一个面向应届毕业生的 <b>AI 求职工作台</b>。它不做又一个招聘信息聚合工具，而是把
+      「发现机会 → 判断匹配 → 定制简历 → 准备面试 → 跟踪结果」串成一条连续的工作流，
+      用同一个岗位档案承载全部求职资料。
+    </p>
+    <p class="hero-note">
+      这不是一份只有配图的方案文档：页面里的每个模块都可以真实点击，岗位匹配、JD 解析、简历改写、
+      面试题生成与回答评估都由我自己实现的可解释 AI 引擎在本地运行。
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="index.html" target="_blank" rel="noopener">打开 AI 求职工作台 →</a>
+      <a class="btn" href="#screens">先看关键页面交互</a>
+      <a class="btn btn-ghost" href="#architecture">产品架构</a>
+    </div>
+
+    <div class="meta-grid">
+      <div class="meta-cell"><div class="k">我的角色</div><div class="v">产品设计 + 前端实现<br><span style="font-weight:400;font-size:13px;color:#6b7690">独立完成</span></div></div>
+      <div class="meta-cell"><div class="k">交付物</div><div class="v">可运行的 Web 产品原型<br><span style="font-weight:400;font-size:13px;color:#6b7690">5 个核心模块</span></div></div>
+      <div class="meta-cell"><div class="k">技术实现</div><div class="v">原生 Web + 本地 AI 引擎<br><span style="font-weight:400;font-size:13px;color:#6b7690">零依赖 · 可离线运行</span></div></div>
+      <div class="meta-cell"><div class="k">产品原则</div><div class="v">信息可追溯 · 内容可核验<br><span style="font-weight:400;font-size:13px;color:#6b7690">用户可控</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 01 机会 ============================ -->
+<section class="sec" id="opportunity">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">01 / 用户痛点与市场机会</span>
+      <h2>应届生缺的不是岗位，而是「判断」和「转化」</h2>
+      <p>
+        秋招期间，求职者面对的不是信息太少，而是信息太多、太散、太像。真正消耗时间的环节，
+        是从「看到岗位」到「能投出去」之间的判断与准备。我把这四个环节定义为产品的初始问题。
+      </p>
+    </div>
+
+    <div class="grid g4">
+      <article class="card pain">
+        <div class="icon">01</div>
+        <h3>信息找不到</h3>
+        <p>官网、公众号、小红书需要反复搜索，同一岗位在不同渠道重复出现，还可能已经截止。</p>
+        <div class="old"><b>现有方式的问题</b>信息分散，缺少统一入口与核验时间。</div>
+        <div class="new"><b>产品解法</b>多渠道聚合 + 去重 + 来源与核验时间标注。</div>
+      </article>
+
+      <article class="card pain">
+        <div class="icon">02</div>
+        <h3>岗位筛不准</h3>
+        <p>岗位名称相似，但要求差异很大；只看分数无法判断「我到底差在哪」。</p>
+        <div class="old"><b>现有方式的问题</b>只能凭感觉投，投递决策缺少依据。</div>
+        <div class="new"><b>产品解法</b>匹配优势 / 能力差距 / 下一步建议三段式分析。</div>
+      </article>
+
+      <article class="card pain">
+        <div class="icon">03</div>
+        <h3>简历不会改</h3>
+        <p>一份简历投所有岗位，项目经历表达偏「参与、协助」，无法体现真实贡献。</p>
+        <div class="old"><b>现有方式的问题</b>通用模板套用，缺针对性，也不会表达项目价值。</div>
+        <div class="new"><b>产品解法</b>按 JD 重组真实经历，逐条可接受 / 修改 / 撤销。</div>
+      </article>
+
+      <article class="card pain">
+        <div class="icon">04</div>
+        <h3>面试没准备</h3>
+        <p>看过很多面经，却不知道哪些问题适合自己，更不知道怎么用自己的经历回答。</p>
+        <div class="old"><b>现有方式的问题</b>面经是别人的答案，无法迁移到自己的项目上。</div>
+        <div class="new"><b>产品解法</b>面经 + JD + 个人经历 → 个性化问题与回答结构。</div>
+      </article>
+    </div>
+
+    <div class="callout" style="margin-top:22px">
+      <b>机会判断：</b>市场上「岗位聚合」和「AI 简历生成」都是单点工具，各自解决一个环节，
+      但求职本质上是一条链路——同一段项目经历，应该能同时服务于岗位匹配、简历表达和面试回答。
+      <b>把这条链路用「岗位档案」串起来，是我想验证的核心假设。</b>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 02 用户 ============================ -->
+<section class="sec" id="users">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">02 / 用户画像与使用场景</span>
+      <h2>主要服务两类「缺少求职经验」的应届生</h2>
+      <p>
+        产品初期明确不服务社招与高端职位人群：目标用户是第一次完整经历秋招、
+        信息筛选与材料准备能力尚未建立的本科生与硕士生。
+      </p>
+    </div>
+
+    <div class="grid g2">
+      <article class="card" style="padding:24px">
+        <div class="kicker">PERSONA A · 主要用户</div>
+        <h3>第一次参加秋招的硕士生「林知遥」</h3>
+        <p>
+          信息管理专业，2027 届硕士。有两段实习和几个课程项目，但不知道自己的经历能对应什么岗位，
+          简历上写的是「参与需求调研和功能设计」这类无法体现贡献的描述。
+        </p>
+        <div style="margin-top:14px">
+          <div style="font-size:13px;font-weight:600;margin-bottom:8px">核心诉求</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="pill">知道该投什么</span>
+            <span class="pill">简历怎么写才对口</span>
+            <span class="pill">面试怎么用自己的例子回答</span>
+          </div>
+        </div>
+        <div style="margin-top:14px">
+          <div style="font-size:13px;font-weight:600;margin-bottom:8px">典型场景</div>
+          <p style="font-size:13.5px">
+            每天晚上花 40 分钟在多个平台搜岗位，看到合适的先收藏到备忘录，
+            投递时临时改简历，面试前再去小红书翻面经——全过程没有任何记录沉淀下来。
+          </p>
+        </div>
+      </article>
+
+      <article class="card" style="padding:24px">
+        <div class="kicker">PERSONA B · 次要用户</div>
+        <h3>跨专业转方向求职的本科生「陈屿」</h3>
+        <p>
+          电子商务专业，想投产品/运营方向。没有对口实习，项目经历以课程作业为主，
+          最大的困惑是「我的经历到底算不算加分项」。
+        </p>
+        <div style="margin-top:14px">
+          <div style="font-size:13px;font-weight:600;margin-bottom:8px">核心诉求</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="pill">判断能力差距</span>
+            <span class="pill">把课程项目讲成岗位语言</span>
+            <span class="pill">管理多岗位投递进度</span>
+          </div>
+        </div>
+        <div style="margin-top:14px">
+          <div style="font-size:13px;font-weight:600;margin-bottom:8px">产品对他的价值</div>
+          <p style="font-size:13.5px">
+            产品不会只告诉他「不匹配」，而是明确指出差距项，并给出「可以用什么经历补上」、
+            「需要补充哪些事实」，让他知道下一步该做什么。
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sec-head" style="margin:44px 0 24px">
+      <h2 style="font-size:22px">完整使用流程</h2>
+      <p>这条链路中最关键的产品机制是<b>以岗位为中心串联所有任务</b>：每个岗位都是一个独立的求职项目。</p>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step"><span class="n">STEP 1</span><b>建立画像</b><span>填写目标方向、城市、学历，上传原始简历</span></div>
+      <div class="flow-step"><span class="n">STEP 2</span><b>查看日报</b><span>每天看到新增岗位、匹配理由与待处理事项</span></div>
+      <div class="flow-step"><span class="n">STEP 3</span><b>判断匹配</b><span>查看匹配优势、能力差距与下一步建议</span></div>
+      <div class="flow-step"><span class="n">STEP 4</span><b>定制简历</b><span>按 JD 生成定制版，逐条确认后导出投递</span></div>
+      <div class="flow-step"><span class="n">STEP 5</span><b>准备面试</b><span>面经 + JD + 个人经历生成问题与回答结构</span></div>
+      <div class="flow-step"><span class="n">STEP 6</span><b>复盘迭代</b><span>记录面试反馈，调整后续准备策略</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 03 架构 ============================ -->
+<section class="sec" id="architecture">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">03 / 产品架构与核心功能</span>
+      <h2>五个模块，一条数据链路</h2>
+      <p>
+        招聘信息、个人经历、岗位要求和面试准备不是彼此独立的功能，而是可以互相串联的数据。
+        用户确认一个岗位后，系统就能围绕该岗位继续生成简历、整理面经并准备面试。
+      </p>
+    </div>
+
+    <div class="arch">
+      <div class="arch-row">
+        <div class="arch-label">功能模块</div>
+        <div class="arch-cells">
+          <div class="arch-cell"><b>① 招聘雷达</b><span>多渠道聚合 · 去重 · 来源与核验时间 · 每日日报</span></div>
+          <div class="arch-cell"><b>② 智能岗位匹配</b><span>画像 × JD · 优势 / 差距 / 建议 · 投递优先级</span></div>
+          <div class="arch-cell"><b>③ AI 简历工坊</b><span>JD 解析 · 经历重写 · 前后对比 · 导出归档</span></div>
+          <div class="arch-cell"><b>④ AI 面试教练</b><span>面经整合 · 预测问题 · 个性化回答 · 模拟面试</span></div>
+          <div class="arch-cell"><b>⑤ 求职进度中心</b><span>投递看板 · 待办提醒 · 结果复盘 · 结构分析</span></div>
+        </div>
+      </div>
+
+      <div class="arch-arrow">▼ &nbsp; 全部读写同一份状态 ▼</div>
+
+      <div class="arch-row">
+        <div class="arch-label">共享数据层</div>
+        <div class="arch-cells">
+          <div class="arch-cell core"><b>个人求职画像</b><span>学历 / 专业 / 目标城市 / 目标方向 / 薪资期望</span></div>
+          <div class="arch-cell core"><b>简历素材库</b><span>教育 / 实习 / 项目 / 技能，AI 改写的唯一事实来源</span></div>
+          <div class="arch-cell core"><b>岗位档案</b><span>来源链接 / JD / 匹配分析 / 简历版本 / 进度时间线</span></div>
+          <div class="arch-cell core"><b>面经与题库</b><span>公开面经（带来源与时间）+ AI 预测题（明确标注）</span></div>
+          <div class="arch-cell core"><b>练习记录</b><span>模拟面试回答、四维度反馈、追问与改进建议</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid g3" style="margin-top:22px">
+      <article class="card">
+        <div class="kicker">核心机制一</div>
+        <h3>以岗位为中心的档案</h3>
+        <p>
+          同一职位即使在官网、公众号和小红书重复出现，也合并为一条岗位记录并保留多个来源链接。
+          投递后，该岗位的 JD、来源、匹配分析、简历版本、面试资料与进度记录全部挂在这个档案下。
+        </p>
+      </article>
+      <article class="card">
+        <div class="kicker">核心机制二</div>
+        <h3>简历版本独立保存</h3>
+        <p>
+          每个岗位保存独立的定制简历版本。用户之后修改通用简历时，
+          已投递岗位的历史版本不会随之改变，避免「改着改着，投出去的简历和现在看到的不一致」。
+        </p>
+      </article>
+      <article class="card">
+        <div class="kicker">核心机制三</div>
+        <h3>推荐逻辑可解释</h3>
+        <p>
+          每日推荐 = 新鲜度 × 岗位匹配度 × 投递紧迫性。但产品不只用分数排序，
+          每一条推荐都给出依据，每个匹配优势都链接到简历里的具体句子。
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 04 关键页面 ============================ -->
+<section class="sec" id="screens">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">04 / 关键页面设计与交互演示</span>
+      <h2>下面三个窗口是真实可交互的原型，不是截图</h2>
+      <p>
+        可以直接在页面里点击、筛选、生成简历、提交模拟面试回答。所有「AI 能力」
+        都在浏览器本地运行，无需联网，结果可复现。
+      </p>
+    </div>
+
+    <div class="tabs" id="demoTabs">
+      <button class="tab on" data-demo="0">① 工作台 · 秋招日报</button>
+      <button class="tab" data-demo="1">② 招聘雷达 · 岗位匹配</button>
+      <button class="tab" data-demo="2">③ AI 简历工坊</button>
+      <button class="tab" data-demo="3">④ 面试教练 · 进度中心</button>
+    </div>
+
+    <div class="demo-wrap" id="demoHost">
+      <div class="demo-bar">
+        <div class="demo-dots"><i></i><i></i><i></i></div>
+        <div class="demo-url" id="demoUrl">index.html#/dashboard</div>
+        <a class="demo-open" id="demoOpen" href="index.html#/dashboard" target="_blank" rel="noopener">在新窗口打开 ↗</a>
+      </div>
+      <iframe class="demo-frame" id="demoFrame" src="index.html?embed=1#/dashboard" title="秋招雷达产品演示"></iframe>
+      <div class="demo-cap" id="demoCap"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 05 AI 实现 ============================ -->
+<section class="sec" id="ai">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">05 / AI 能力实现与验收标准</span>
+      <h2>重点不是用了多少模型，而是关键场景能不能跑通</h2>
+      <p>
+        我为每一项 AI 能力定义了「承担什么任务」和「怎样算验收通过」。
+        为了让原型可以离线演示、结果可复现，我用一套可解释的规则引擎实现了全部能力，
+        同时保留了接入远程大模型的通道。
+      </p>
+    </div>
+
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr><th style="width:15%">产品能力</th><th style="width:26%">AI 在其中承担的任务</th><th style="width:29%">验收标准</th><th style="width:30%">本原型的实现方式</th></tr>
+        </thead>
+        <tbody id="aiTable"></tbody>
+      </table>
+    </div>
+
+    <div class="grid g2" style="margin-top:22px">
+      <article class="card">
+        <div class="kicker">可解释性设计</div>
+        <h3>每个结论都能追溯到依据</h3>
+        <p>
+          匹配优势不是一句「你符合这个岗位」，而是直接引用简历里的原句作为证据；
+          简历改写的每一条都标注「修改依据」，说明它对应岗位 JD 的哪一条要求。
+          用户看到的是推理过程，而不是一个无法质疑的结论。
+        </p>
+      </article>
+      <article class="card">
+        <div class="kicker">边界设计</div>
+        <h3>AI 不做什么，和 AI 做什么一样重要</h3>
+        <p>
+          AI 不编造用户经历——如果改写后的描述缺少可验证的数据，系统会显式标注「⚠️ 需补充事实」，
+          而不是自动生成一个看起来漂亮的数字。面试预测题会明确标注为「AI 预测题」，
+          与带来源的真实面经区分开。
+        </p>
+      </article>
+    </div>
+
+    <div class="callout" style="margin-top:22px">
+      <b>诚实说明技术边界：</b>本原型的 AI 能力由关键词词典、同义词扩展、句式改写模板与启发式评分构成，
+      是「可解释的规则引擎」而不是大模型推理。这样做的原因是产品演示需要结果稳定、可复现、可离线运行。
+      生产环境中，这套引擎会被替换为大模型调用，但<b>产品层的关键词抽取、证据绑定、事实校验与用户确认流程会保留</b>——
+      它们才是决定输出质量的部分。
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 06 AI Coding ============================ -->
+<section class="sec" id="aicoding">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">06 / AI Coding 实践过程</span>
+      <h2>我是怎么用 AI Coding 把设计稿变成可运行产品的</h2>
+      <p>
+        从产品文档到可交互原型，我用 AI Coding 工具完成了技术方案拆解、代码实现与调试。
+        这个过程本身也是产品能力的一部分：<b>如何把模糊需求拆成可验证的小块，并判断 AI 给出的方案对不对。</b>
+      </p>
+    </div>
+
+    <div class="grid g2" style="align-items:start">
+      <div>
+        <h3 style="font-size:17px;margin:0 0 16px">开发流程</h3>
+        <div class="tl">
+          <div class="tl-item">
+            <span class="tl-tag">STEP 01</span>
+            <h4>先定数据模型，再写界面</h4>
+            <p>先确定「岗位档案」这一核心数据结构，以及画像 / 简历 / 简历版本 / 面试计划 / 待办之间的关系。数据链路定清楚之后，五个模块才能共用同一份状态。</p>
+          </div>
+          <div class="tl-item">
+            <span class="tl-tag">STEP 02</span>
+            <h4>把 AI 能力拆成可测试的纯函数</h4>
+            <p>JD 解析、匹配分析、简历改写、问题生成、回答评估被拆成五个独立函数，输入输出确定。这样它们既可以被界面调用，也能脱离浏览器单独测试。</p>
+          </div>
+          <div class="tl-item">
+            <span class="tl-tag">STEP 03</span>
+            <h4>先跑通一条端到端主流程</h4>
+            <p>优先完成「发现岗位 → 确认匹配 → 生成定制简历 → 生成面试题 → 记录进度」这一条链路，而不是平均地把五个模块都做到 60%。</p>
+          </div>
+          <div class="tl-item">
+            <span class="tl-tag">STEP 04</span>
+            <h4>用断言验证，而不是靠肉眼判断</h4>
+            <p>为 AI 引擎写了 49 条自动化断言（例如「AI 改写后不得出现原简历中不存在的数字」「预测题不得带来源」），再在真实浏览器里逐页点检交互。</p>
+          </div>
+          <div class="tl-item">
+            <span class="tl-tag">STEP 05</span>
+            <h4>按测试结果反推产品问题</h4>
+            <p>测试过程中发现的问题不只是代码 bug，有些直接指向设计缺陷，见右侧「测试发现与修正」。</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="font-size:17px;margin:0 0 16px">测试发现与修正（真实记录）</h3>
+        <div class="grid" style="gap:12px">
+          <article class="card" style="padding:17px">
+            <div class="pill pill-warn" style="margin-bottom:9px">问题 1 · 数据链路</div>
+            <h3 style="font-size:15px">新岗位更新状态后，进度时间线是空的</h3>
+            <p>创建投递记录时，状态字段已经被赋成新值，导致「旧状态 → 新状态」的变化判断永远为假，时间线不会写入。<br><b>修正：</b>新建记录时状态置空，比较前回退为「已收藏」。</p>
+          </article>
+          <article class="card" style="padding:17px">
+            <div class="pill pill-warn" style="margin-bottom:9px">问题 2 · 交互失效</div>
+            <h3 style="font-size:15px">筛选条件点了没反应</h3>
+            <p>筛选按钮的事件绑定挂在了外层容器上，读取到的筛选值始终为空，导致筛选静默失效——看起来正常，实际没起作用。<br><b>修正：</b>改为绑定到按钮本身，并从父容器读取筛选维度。这类「不报错但没生效」的问题，只有真正点击验证才能发现。</p>
+          </article>
+          <article class="card" style="padding:17px">
+            <div class="pill pill-warn" style="margin-bottom:9px">问题 3 · 体验</div>
+            <h3 style="font-size:15px">首次引导页刷新后重复出现</h3>
+            <p>「已完成引导」被写进了画像对象而不是全局状态，导致每次打开都像第一次使用。<br><b>修正：</b>状态字段归位，并验证「刷新后不再出现引导」。</p>
+          </article>
+          <article class="card" style="padding:17px">
+            <div class="pill pill-warn" style="margin-bottom:9px">问题 4 · 内容解析</div>
+            <h3 style="font-size:15px">粘贴「2026 年 10 月 27 日」解析不出截止时间</h3>
+            <p>日期正则只覆盖了「10月27日」和「2026-10-27」两种写法。<br><b>修正：</b>补齐中文日期格式，并统一归一化为 <span class="num">YYYY-MM-DD</span>，便于与当前日期比较算出「还有几天截止」。</p>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid g4" style="margin-top:24px">
+      <div class="card"><div class="kicker">技术选型</div><h3>零依赖静态站点</h3><p>原生 HTML / CSS / JavaScript，不需要构建工具，直接打开即可运行，可部署到任意静态托管。</p></div>
+      <div class="card"><div class="kicker">状态管理</div><h3>单一数据源 + 本地持久化</h3><p>五个模块读写同一份状态，写入后自动同步到 localStorage，刷新不丢失。</p></div>
+      <div class="card"><div class="kicker">测试方式</div><h3>49 条引擎断言 + 浏览器点检</h3><p>引擎逻辑在 Node 中断言验证，界面在真实浏览器中按用户路径逐项点击验证。</p></div>
+      <div class="card"><div class="kicker">可扩展性</div><h3>远程模型通道</h3><p>设置页保留 OpenAI 兼容接口配置，可一键切换到真实大模型，接入失败自动回退本地引擎。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 07 指标 ============================ -->
+<section class="sec" id="metrics">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">07 / 如何判断这个产品有没有价值</span>
+      <h2>早期不承诺录用率，只验证两个核心假设</h2>
+      <p>
+        求职结果受太多不可控因素影响，用「录用率」衡量产品价值既不严谨也不诚实。
+        我把指标分成三层，早期重点验证前两层。
+      </p>
+    </div>
+
+    <div class="grid g3">
+      <article class="metric">
+        <span class="lv">LEVEL 1 · 信息效率</span>
+        <h4>是否减少用户搜集信息的时间？</h4>
+        <ul>
+          <li>每日有效新增岗位数</li>
+          <li>过期信息率</li>
+          <li>岗位去重率</li>
+        </ul>
+        <div class="q">验证问题：用户还需要在几个平台之间来回切换？</div>
+      </article>
+      <article class="metric">
+        <span class="lv">LEVEL 2 · 求职效率</span>
+        <h4>是否帮助用户更快完成投递准备？</h4>
+        <ul>
+          <li>岗位匹配分析使用率</li>
+          <li>简历生成完成率</li>
+          <li>单份简历制作耗时</li>
+        </ul>
+        <div class="q">验证问题：岗位与经历的联动，是否真的提高了简历针对性？</div>
+      </article>
+      <article class="metric">
+        <span class="lv">LEVEL 3 · 面试效果</span>
+        <h4>是否让面试准备更有针对性？</h4>
+        <ul>
+          <li>面试准备完成率</li>
+          <li>模拟面试使用率</li>
+          <li>用户自评提升</li>
+        </ul>
+        <div class="q">验证问题：面经能否被转化成适用于自己的回答？</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 08 路线图 ============================ -->
+<section class="sec" id="roadmap">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">08 / 版本规划与优先级</span>
+      <h2>第一版不做全网抓取、自动投递和语音面试</h2>
+      <p>
+        这些能力要么依赖不稳定的采集，要么涉及用户授权与合规风险。
+        更合理的做法是先做一个能完整演示核心价值的 MVP。
+      </p>
+    </div>
+
+    <div class="grid g3">
+      <div class="prio p0">
+        <div class="prio-head"><span class="tag">P0</span><b>必须完成 · 当前原型已实现</b></div>
+        <ul>
+          <li>用户画像创建与简历上传 / 粘贴解析</li>
+          <li>招聘信息列表、搜索、筛选、岗位详情</li>
+          <li>手动导入招聘链接或岗位文本并结构化</li>
+          <li>AI 岗位匹配分析（优势 / 差距 / 建议）</li>
+          <li>AI 定制简历与修改前后对比、导出</li>
+          <li>面试问题生成、个性化回答与模拟面试反馈</li>
+          <li>求职进度看板与待办管理</li>
+        </ul>
+      </div>
+      <div class="prio p1">
+        <div class="prio-head"><span class="tag">P1</span><b>验证核心体验后开发</b></div>
+        <ul>
+          <li>定时获取官方招聘信息</li>
+          <li>多渠道信息去重、来源追踪与过期校验</li>
+          <li>根据面试日期自动生成准备计划</li>
+          <li>AI 多轮追问与更细的回答评价</li>
+          <li>招聘截止时间与面试提醒</li>
+        </ul>
+      </div>
+      <div class="prio p2">
+        <div class="prio-head"><span class="tag">P2</span><b>后续拓展方向</b></div>
+        <ul>
+          <li>更多平台的合规数据接入</li>
+          <li>多轮面试记录与能力成长档案</li>
+          <li>求职策略分析与个性化岗位推荐</li>
+          <li>团队版、学校就业服务版等场景</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 09 原则与复盘 ============================ -->
+<section class="sec" id="principles">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">09 / 产品原则与复盘</span>
+      <h2>三条写进设计里的底线</h2>
+      <p>求职数据涉及个人隐私，AI 生成的又是要交给企业的材料。这三条原则不是口号，而是直接影响功能设计。</p>
+    </div>
+
+    <div class="grid g3">
+      <div class="card principle">
+        <h4>信息可追溯</h4>
+        <p>
+          每条招聘信息和面经都保留来源渠道、原始链接与最近核验时间，并明确区分官方信息与社区线索。
+          <b>产品表现：</b>来源为公众号/小红书线索的岗位，卡片上会直接提示「尚未在官方渠道核验」。
+        </p>
+      </div>
+      <div class="card principle">
+        <h4>内容可核验</h4>
+        <p>
+          AI 生成的简历不得编造用户经历，面试预测不能伪装成企业真实题库。
+          <b>产品表现：</b>改写后缺少数据的条目会标红提醒补充事实；预测题与真实面经题使用不同标签。
+        </p>
+      </div>
+      <div class="card principle">
+        <h4>用户可控</h4>
+        <p>
+          简历和投递内容由用户最终确认，AI 不应未经授权自动投递或公开个人信息。
+          <b>产品表现：</b>每条简历修改都要用户逐条接受/修改/撤销；投递需要用户手动确认。
+        </p>
+      </div>
+    </div>
+
+    <div class="sec-head" style="margin:44px 0 22px">
+      <h2 style="font-size:22px">复盘：如果重做一次，我会改变什么</h2>
+    </div>
+    <div class="grid g3">
+      <article class="card">
+        <div class="kicker">做得对</div>
+        <h3>先跑通一条链路</h3>
+        <p>没有平均用力去做五个模块的 60%，而是先把「发现 → 判断 → 定制 → 准备 → 跟踪」这条主链路跑通。这让产品在演示时能讲清楚一个完整故事，而不是零散的功能堆叠。</p>
+      </article>
+      <article class="card">
+        <div class="kicker">可以更好</div>
+        <h3>匹配算法还太依赖关键词</h3>
+        <p>当前的匹配基于技能词典与同义词扩展，对「经历相似但用词不同」的情况识别不足。下一步应该引入语义向量匹配，并让用户可以对匹配结果反馈「这条判断不准确」，用反馈数据持续校准。</p>
+      </article>
+      <article class="card">
+        <div class="kicker">下一步</div>
+        <h3>需要真实用户测试</h3>
+        <p>目前所有结论都来自我自己作为目标用户的自测。下一步需要找 5-8 位正在秋招的应届生完成一次真实投递流程，重点观察他们是否真的会使用「逐条确认修改」而不是直接点「全部接受」。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 页脚 ============================ -->
+<footer class="pfoot">
+  <div class="wrap">
+    <div class="grid g2" style="align-items:center;gap:24px">
+      <div>
+        <b style="font-size:15px">秋招雷达 · AI 求职工作台</b>
+        <p style="margin:6px 0 0">
+          从岗位发现到面试通关的 AI 求职产品设计。<br>
+          全部数据为虚构示例，用于演示产品交互，不代表任何真实企业的招聘信息。
+        </p>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end">
+        <a class="btn btn-primary" href="index.html" target="_blank" rel="noopener">打开产品原型 →</a>
+        <a class="btn" href="#screens">回到交互演示</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------------- AI 能力验收表 ---------------- */
+  var ACCEPTANCE = [
+    { ability: '招聘信息整理', ai: '提取岗位名称、要求、来源和时间', standard: '能将导入的招聘文本转为结构化岗位卡片', impl: '规则解析 + 关键词词典抽取字段，公司 / 岗位 / 城市 / 学历 / 截止时间 / 职责与要求自动分段落' },
+    { ability: '岗位匹配', ai: '对比个人画像与 JD', standard: '输出有依据的匹配分析和能力差距', impl: '技能交集 + 同义词扩展 + 简历原句定位；优势项直接引用简历中的证据句子' },
+    { ability: '简历定制', ai: '重组真实经历，匹配岗位关键词', standard: '可预览、修改、保存和导出', impl: '弱表达识别 + 动作短语库改写；每条给出修改依据，缺少数据时强制标注「需补充事实」' },
+    { ability: '面试准备', ai: '综合 JD、公开面经和个人经历', standard: '能生成分类问题、参考回答和追问', impl: '面经库 + 分类模板 + 简历素材检索；生成 STAR 结构骨架与需补充的事实清单' },
+    { ability: '模拟面试', ai: '评估回答的逻辑、相关性、证据与表达', standard: '给出可执行的改进建议与追问', impl: '四维度启发式评分（结构词 / 岗位关键词 / 量化信息 / 句长与填充词），并生成面试官追问' },
+    { ability: '求职管理', ai: '根据用户操作更新状态', standard: '状态变化后看板同步更新', impl: '统一状态机（收藏 / 投递 / 笔试 / 面试 / Offer / 结束）+ 时间线记录 + 本地持久化' }
+  ];
+  var tbody = document.getElementById('aiTable');
+  tbody.innerHTML = ACCEPTANCE.map(function (r) {
+    return '<tr>' +
+      '<td><b>' + r.ability + '</b></td>' +
+      '<td>' + r.ai + '</td>' +
+      '<td>' + r.standard + '</td>' +
+      '<td>' + r.impl + '</td>' +
+      '</tr>';
+  }).join('');
+
+  /* ---------------- 内嵌演示切换 ---------------- */
+  var DEMOS = [
+    {
+      hash: '#/dashboard', title: '工作台 · 秋招日报',
+      cap: '首页回答「今天该关注什么」：新增岗位、高匹配岗位、待优化简历与近期面试四个指标，配合每日推荐、近期截止与待办。',
+      points: ['推荐理由基于「个人画像 × 岗位 JD」计算，而非随机推荐', '来源为社区线索的岗位会显式提示「官方来源待核验」', '每个数字都可点击下钻到对应模块']
+    },
+    {
+      hash: '#/radar', title: '招聘雷达 · 岗位匹配',
+      cap: '左侧多条件筛选（方向 / 城市 / 学历 / 来源 / 状态 / 匹配度下限），右侧岗位卡片展示匹配度、命中能力与能力差距。',
+      points: ['同一职位多来源合并为一条记录，保留全部来源链接与核验时间', '区分「官方来源」与「社区线索」，后者明确提示需核验', '每张卡片可直接进入定制简历或面试准备，形成链路入口']
+    },
+    {
+      hash: '#/resume', title: 'AI 简历工坊',
+      cap: '选择目标岗位后解析 JD，生成逐条修改建议：左边是原始简历与 JD 解析，右边是可接受 / 修改 / 撤销的改写条目与实时预览。',
+      points: ['改写基于简历中的真实经历，不新增虚构数据', '缺少可验证数据的条目会标注「⚠️ 需补充事实」', '接受修改后，右侧简历预览同步高亮，并支持导出 PDF / Markdown']
+    },
+    {
+      hash: '#/interview', title: '面试教练 · 进度中心',
+      cap: '整合公开面经、岗位 JD 与个人项目经历，生成分类问题清单、个性化回答结构与模拟面试反馈；进度中心用看板管理全部投递。',
+      points: ['真实面经题带来源与时间，AI 预测题单独标注', '回答评估从逻辑结构、岗位相关性、证据充分性、表达清晰度四维度反馈', '看板支持拖拽更新状态，状态变化自动写入该岗位时间线']
+    }
+  ];
+
+  var frame = document.getElementById('demoFrame');
+  var urlLabel = document.getElementById('demoUrl');
+  var openLink = document.getElementById('demoOpen');
+  var capBox = document.getElementById('demoCap');
+
+  function paintDemo(i) {
+    var d = DEMOS[i];
+    frame.src = 'index.html?embed=1' + d.hash;
+    urlLabel.textContent = 'index.html' + d.hash;
+    openLink.href = 'index.html' + d.hash;
+    capBox.innerHTML = '<b>' + d.title + '</b><p>' + d.cap + '</p>' +
+      '<ul>' + d.points.map(function (p) { return '<li>' + p + '</li>'; }).join('') + '</ul>';
+    document.querySelectorAll('#demoTabs .tab').forEach(function (t, j) {
+      t.classList.toggle('on', i === j);
+    });
+  }
+
+  document.querySelectorAll('#demoTabs .tab').forEach(function (t) {
+    t.addEventListener('click', function () { paintDemo(Number(t.getAttribute('data-demo'))); });
+  });
+  paintDemo(0);
+})();
+</script>
+</body>
+</html>
